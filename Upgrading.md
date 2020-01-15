@@ -104,14 +104,14 @@ Tasmota uses flash memory to store options and settings. New versions add (or re
 To avoid this use our decode-config tool to easily create and restore backups in Tasmota:
 
 ## decode-config tool 
-* [decode-config.py](https://github.com/tasmota/decode-config/blob/master/decode-config.py) - [installation instructions](https://github.com/tasmota/decode-config/blob/master/README.md) in Python for Windows or Linux
-* [decode-config.exe](https://github.com/tasmota/decode-config/releases) - Windows only executable. If using this replace `decode-config.py` with `decode-config.exe` or `decode-config_x64.exe`  in the instruction examples.
+* [decode-config.py](https://github.com/tasmota/decode-config/tree/master) - written in Python for Windows, MacOS or Linux, see [installation instructions](https://github.com/tasmota/decode-config/blob/master/README.md) 
+* [decode-config](https://github.com/tasmota/decode-config/releases) - ready-to-run executables. Using this, replace `decode-config.py` with `decode-config_<os>` in the instruction examples; e.g. for Windows 10 use `decode-config_win64.exe`, for MacOS use `decode-config_mac` and on linux use `decode-config_linux`.
 
 #### 1. make a configuration backup:
 
   * Create a new backup straight from your device   
 
-    `decode-config.py -d <deviceIP> --backup-file Config-@f --backup-type json`
+    `decode-config.py -d <deviceIP> --backup-file Config-@f
 
     `@f` will be replaced by decode-config to device's FriendlyName
 
@@ -119,7 +119,7 @@ To avoid this use our decode-config tool to easily create and restore backups in
 
 * Convert a previously made `.dmp` backup into a JSON file   
   
-  `decode-config.py -f <dmp_filename> --backup-file Config-@f --backup-type json`
+  `decode-config.py -f <dmp_filename> --backup-file Config-@f
 
 #### 2. perform a device reset 
 Erase flash settings area but keep Wi-Fi and MQTT settings
